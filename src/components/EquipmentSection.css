@@ -1,0 +1,224 @@
+.equipment-section {
+  background-color: #ffffff;
+  padding: 80px 0 96px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #303030;
+  margin-bottom: 24px;
+  text-align: left;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 56px;
+  height: 2px;
+  background-color: #b5b5b5;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.equipment-card {
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.equipment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.equipment-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.equipment-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.equipment-content {
+  padding: 16px 16px 18px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.equipment-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin: 0 0 6px 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.equipment-description {
+  font-size: 12px;
+  color: #8a8a8a;
+  margin: 0 0 12px 0;
+  text-align: left;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.request-button {
+  background-color: #2f2a27;
+  color: #ffffff;
+  border: 1px solid #2f2a27;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: auto;
+  align-self: flex-end;
+}
+
+.request-button:hover {
+  background-color: #221d1a;
+  border-color: #221d1a;
+}
+
+.view-all-button {
+  display: block;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  color: #6b6b6b;
+  padding: 12px 0;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.view-all-button:hover {
+  background: #fafafa;
+  color: #3a3a3a;
+  border-color: #cfcfcf;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-banner {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: #fff4f4;
+  color: #c62828;
+  border: 1px solid #ffdada;
+  border-radius: 8px;
+}
+
+/* Skeleton */
+.is-skeleton {
+  pointer-events: none;
+}
+.skeleton-block {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 37%, #f0f0f0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+.skeleton-line {
+  height: 12px;
+  background: #eee;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+.skeleton-line.short { width: 60%; }
+.skeleton-title { height: 16px; width: 70%; }
+.skeleton-btn {
+  height: 40px;
+  background: #eee;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive */
+@media (max-width: 1199px) {
+  .equipment-grid { grid-template-columns: repeat(2, 1fr); }
+  .container { max-width: 960px; }
+}
+
+@media (max-width: 991px) {
+  .equipment-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .container { max-width: 768px; }
+}
+
+@media (max-width: 767px) {
+  .equipment-section { padding: 56px 0 72px 0; }
+  .section-title { 
+    font-size: 28px; 
+    text-align: left; 
+    padding-bottom: 16px;
+  }
+  .equipment-grid { grid-template-columns: 1fr; gap: 16px; }
+  .container { padding: 0 16px; }
+  .equipment-card {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipment-section { padding: 40px 0 56px 0; }
+  .section-title { 
+    font-size: 24px; 
+    margin-bottom: 24px;
+  }
+  .equipment-content {
+    padding: 16px;
+  }
+  .equipment-title {
+    font-size: 16px;
+  }
+  .equipment-description {
+    font-size: 13px;
+  }
+}
